@@ -36,7 +36,7 @@ setup(
 	name="sd2i",
 	version="2023.04",
 	description="Single Digit to Image reconstruction tool",
-	url="https://github.com/robindong3/SD2I",
+	url="https://github.com/robindong3/sd2i",
 	author="H. Dong",
 	author_email="robondong3@gmail.com",
 	install_requires=[
@@ -46,6 +46,9 @@ setup(
     package_data={
         '': ['*.txt', '*.rst'],
     },
+    entry_points={
+        'gui_scripts': ['Integrator = sd2i.vis.Integrator.Integrator:main', 'MultiTool = sd2i.vis.MultiTool.MultiTool:main', 'nDVis = sd2i.vis.nDVis.nDVis:main']
+    },		
 	license="LICENSE.txt",
 	classifiers=[
 		"Intended Audience :: Science/Research",
