@@ -46,10 +46,9 @@ setup(
     package_data={
         '': ['*.txt', '*.rst'],
     },
-    entry_points={
-        'gui_scripts': ['Integrator = sd2i.vis.Integrator.Integrator:main', 'MultiTool = sd2i.vis.MultiTool.MultiTool:main', 'nDVis = sd2i.vis.nDVis.nDVis:main']
-    },		
+    
 	license="LICENSE.txt",
+    
 	classifiers=[
 		"Intended Audience :: Science/Research",
 		"Topic :: Scientific/Engineering",
