@@ -5,7 +5,7 @@
 # Copyright (c) 2023 Hongyang Dong
 #
 # Most of functions are reproduced from nDTomo for CT image reconstruction
-#https://github.com/antonyvam/nDTomo
+# https://github.com/antonyvam/nDTomo
 #
 # This package is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
