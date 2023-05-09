@@ -3,6 +3,11 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import  Input, UpSampling2D, Reshape, Dense, Conv2D, Flatten, Cropping2D
 from numpy import ceil
 
+import tensorflow as tf
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import  Input, UpSampling2D, Reshape, Dense, Conv2D, Flatten, Cropping2D
+from numpy import ceil
+
 def SD2I(npix, factor=8, upsample = True):
 
     '''
@@ -16,22 +21,28 @@ def SD2I(npix, factor=8, upsample = True):
     xi = Input(shape=(1,))
     x = Flatten()(xi)
     
+    
     if upsample:
         x = Dense(64, kernel_initializer='random_normal', activation='relu')(x)
         x = Dense(64, kernel_initializer='random_normal', activation='relu')(x)
         x = Dense(64, kernel_initializer='random_normal', activation='relu')(x)
         x = Dense(int(ceil(npix / 4)) * int(ceil(npix / 4)) * factor, kernel_initializer='random_normal', activation='linear')(x)
-        
+
         x = Reshape((int(ceil(npix / 4)), int(ceil(npix / 4)), factor))(x)   
         
         x = UpSampling2D(size = (2,2))(x)
+
+        if npix % 4 == 1 or npix % 4 == 2:
+          x = Cropping2D(cropping=((0, 1), (0, 1)))(x)
+          
         x = Conv2D(filters = 64, kernel_size = (3,3), strides = 1, padding = 'same', kernel_initializer='random_normal', activation = 'relu')(x)
         x = Conv2D(filters = 64, kernel_size = (3,3), strides = 1, padding = 'same', kernel_initializer='random_normal', activation = 'relu')(x)
         x = Conv2D(filters = 64, kernel_size = (3,3), strides = 1, padding = 'same', kernel_initializer='random_normal', activation = 'relu')(x)
         
         x = UpSampling2D(size = (2,2))(x)
 
-        x = Cropping2D(cropping=((1, 0), (1, 0)))(x)
+        if npix % 2 == 1:
+          x = Cropping2D(cropping=((1, 0), (1, 0)))(x)
 
         x = Conv2D(filters = 64, kernel_size = (3,3), strides = 1, padding = 'same', kernel_initializer='random_normal', activation = 'relu')(x)
         x = Conv2D(filters = 64, kernel_size = (3,3), strides = 1, padding = 'same', kernel_initializer='random_normal', activation = 'relu')(x)
