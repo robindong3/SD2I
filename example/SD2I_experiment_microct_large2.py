@@ -41,7 +41,7 @@ for device in physical_devices:
 
 #%%
 #chose the dataset from ['micro779_ch1', 'micro779_ch2', xrdct_ch1, xrdct_ch2, micro1559_ch1, micro1559_ch2]
-dataset_name = 'micro1559_ch1'
+dataset_name = 'micro1559_ch2'
 
 fn = '../sd2i/dataset/sinograms_used_in_paper.h5'
 
@@ -165,7 +165,7 @@ fbp_full *= mask[:,:]
 showim(fbp_full, 3, clim=(0, np.max(fbp_full)))
 
 #%%
-cgls_full = astra_rec_single(np.array(sino_full).transpose(), theta=None, scanrange = '180', method='CGLS_CUDA', filt='Ram-Lak', nits = 20)
+cgls_full = astra_rec_single(np.array(sino_full).transpose(), theta=None, scanrange = '180', method='CGLS_CUDA', filt='Ram-Lak', nits = 150)
 cgls_full[cgls_full<0] = 0
 cgls_full *= mask
 showim(cgls_full, 3, clim=(0, np.max(cgls_full)))
