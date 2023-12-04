@@ -10,6 +10,8 @@ pip install -e .
 
 Please follow the example scripts in /example folder to reproduce the figures used in the paper
 
+Colab version are also provided, please click on the colab link provided inside each example file.
+
 This package contains only necessary nDTomo functions for using SD2I
 
 For all CT image reconstruction tools please see our nDTomo package: https://github.com/antonyvam/nDTomo.git
