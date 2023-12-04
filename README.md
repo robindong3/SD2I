@@ -8,7 +8,7 @@ git clone https://github.com/robindong3/SD2I.git && cd SD2I
 pip install -e .
 ```
 
-Please see colab examples on 
+Please follow the example scripts in /example folder to reproduce the figures used in the paper
 
 This package contains only necessary nDTomo functions for using SD2I
 
