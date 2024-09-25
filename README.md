@@ -20,6 +20,6 @@ Citation
 --------
 Please cite using the following:
 
-H. Dong, S.D.M. Jacques, W. Kockelmann, S.W.T. Price, R. Emberson, D. Matras, Y. Odarchenko, V. Middelkoop, A. Giokaris, O. Gutowski, A.-C. Dippel, M. von Zimmermann, A.M. Beale, K.T. Butler, A. Vamvakeros. "A scalable neural network architecture for self-supervised tomographic image reconstruction". Digital Discovery 2 (4), 967-980, 2023, DOI: https://doi.org/10.5281/zenodo.713921](https://doi.org/10.1039/D2DD00105E
+H. Dong, S.D.M. Jacques, W. Kockelmann, S.W.T. Price, R. Emberson, D. Matras, Y. Odarchenko, V. Middelkoop, A. Giokaris, O. Gutowski, A.-C. Dippel, M. von Zimmermann, A.M. Beale, K.T. Butler, A. Vamvakeros. "A scalable neural network architecture for self-supervised tomographic image reconstruction". Digital Discovery 2 (4), 967-980, 2023, DOI: https://doi.org/10.1039/D2DD00105E
 
 A. Vamvakeros et al., nDTomo software suite, 2019, DOI: https://doi.org/10.5281/zenodo.7139214, url: https://github.com/antonyvam/nDTomo
