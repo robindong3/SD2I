@@ -15,10 +15,13 @@ Colab version are also provided, please click on the colab link provided inside 
 This package contains only necessary nDTomo functions for using SD2I
 
 For all CT image reconstruction tools please see our nDTomo package: https://github.com/antonyvam/nDTomo.git
+## SD2I Reconstruction Loop
+
+![SD2Iu](./images/Figure1.png)
+**Fig. 1** The flowchart of the SD2I training algorithm. The input of the SD2I is a random constant which preferably has a similar order of magnitude as the reconstructed image's signal. The generator generates an image based on the single input; the generated image is then converted into a sinogram by the forward operator, which is compared with the sinogram from the experimental dataset. The weights of the generator are updated by minimising the joint loss function with mean absolute error (MAE) and structural similarity index measure (SSIM).
 
 ## CNN Reconstruction Architecture: SD2Iu
 
-### Overview
 ![SD2Iu](./images/Figure2.png)
 **Fig. 2** A representation of the CNN reconstruction SD2I architecture with upsampling (SD2Iu). The kernel types and parameter settings are shown in the figure. The final fully connected layer size is adjusted by an integer k, which adjusts the number of kernels used as the input of the following reshape, upsampling and convolutional layers. All layers in the neural network use ReLU as their activation function, except for the final layer which employs the absolute value function.
 
